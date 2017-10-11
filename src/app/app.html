@@ -1,17 +1,28 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-    </ion-list>
-  </ion-content>
+        </ion-list>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Click the image</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <a (click)="choosePhoto();">
+                    <img [src]="avatar" />
+                </a>
+                <button ion-button block (click)="takePhoto();">Or Take a Photo</button>
+            </ion-card-content>
+        </ion-card>
+    </ion-content>
 
 </ion-menu>
 
